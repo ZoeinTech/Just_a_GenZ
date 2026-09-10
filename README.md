@@ -75,8 +75,9 @@ RSS feed sources are set in `main.py`:
 
 ```python
 urls = [
-    "https://www.vox.com/rss/culture/index.xml",
-    "https://pudding.cool/rss.xml"
+    "https://rss.app/feeds/0TA9tRhJFXNDGvZ0.xml",
+    "https://rss.app/r/feed/OYppIlAGDqWjqmND"
+
 ]
 ```
 
