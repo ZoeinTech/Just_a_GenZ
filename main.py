@@ -11,7 +11,7 @@ import time
 def fetch_news(urls,limit=3):
     digest = "Just a GenZ Digest\n\n"
     digest += "Here are the latest news articles:\n\n"
-    digest += "-" * 50 + "\n"
+    digest += "-" * 30 + "\n"
 
 
     for url in urls:
@@ -20,12 +20,11 @@ def fetch_news(urls,limit=3):
             title = entry.get("title", "No title available")
             link = entry.get("link", "No link available")
             summary = entry.get("summary", "No summary available")
-            date = entry.get("published", "No date available")
+
             digest += f"Title: {title}\n"
             digest += f"Read more here: {link}\n"
-            digest += f"Date: {date}\n"
             digest += f"Summary: {summary}\n"
-            digest += "-" * 50 + "\n"
+            digest += "-" * 30 + "\n"
 
     return digest
 
@@ -47,9 +46,9 @@ def send_message_to_telegram(message):
 
 
 def main():
-    urls = ["https://www.vox.com/rss/culture/index.xml",
-            "https://pudding.cool/rss.xml"]
-    articles = fetch_news(urls, limit=3)
+    urls = ["https://rss.app/feeds/0TA9tRhJFXNDGvZ0.xml",
+            "https://rss.app/r/feed/OYppIlAGDqWjqmND.xml","https://www.alexatherton.com/blog/rss.xml"]
+    articles = fetch_news(urls, limit=1)
     print(articles)
     send_message_to_telegram(articles)
         
